@@ -4,7 +4,7 @@ DEFAULT_CFLAGS = -I${OFED_PATH}/include
 DEFAULT_LDFLAGS = -L${OFED_PATH}/lib64 -L${OFED_PATH}/lib
 
 CFLAGS += $(DEFAULT_CFLAGS) -g -Wall
-LDFLAGS += $(DEFAULT_LDFLAGS) -libverbs
+LDFLAGS += $(DEFAULT_LDFLAGS) -libverbs -lpthread
 OBJECTS = main.o sock.o file_linkedlist_creat.o readfile.o writefile.o ibcpnet.o
 TARGETS = ibcp
 
