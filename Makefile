@@ -5,13 +5,16 @@ DEFAULT_LDFLAGS = -L${OFED_PATH}/lib64 -L${OFED_PATH}/lib
 
 CFLAGS += $(DEFAULT_CFLAGS) -g -Wall
 LDFLAGS += $(DEFAULT_LDFLAGS) -libverbs -lpthread
-OBJECTS = main.o sock.o file_linkedlist_creat.o readfile.o writefile.o ibcpnet.o
+OBJECTS = main.o sock.o file_linkedlist_creat.o readfile.o writefile.o ibcpnet.o ibbuf.o
 TARGETS = ibcp
 
 all: $(TARGETS)
 
-ibcp: main.o file_linkedlist_creat.o  readfile.o writefile.o ibcpnet.o sock.o
+ibcp: main.o file_linkedlist_creat.o  readfile.o writefile.o ibcpnet.o sock.o ibbuf.o
 	$(CC) $^ -o $@ $(LDFLAGS) -lm
+
+ibbuf.o:ibbuf.c
+	$(CC) -c $(CFLAGS) $<
 
 main.o:main.c config.h ibcpnet.o 
 	$(CC) -c $(CFLAGS) -lm $<
