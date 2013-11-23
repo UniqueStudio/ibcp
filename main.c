@@ -1,3 +1,10 @@
+//License: Apache License 2.0
+//See LICENSE for details
+//Authors (in alphabet order of last name):
+// - Qijiang Fan <fqj1994@gmail.com>
+// - Bin He <binhe22@gmail.com>
+// - Cheng Zhang <chengzhang@hustunique.com>
+// - Shiwei Zhou <shwzhou@hustunique.com>
 #include <stdio.h>
 #include <pthread.h>
 #include <stdlib.h>
